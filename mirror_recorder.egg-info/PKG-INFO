@@ -1,0 +1,35 @@
+Metadata-Version: 2.4
+Name: mirror-recorder
+Version: 0.1.0
+Summary: Record I2I sessions as LoRA training data — two viewscreens, every exchange = training
+Author-email: Oracle1 <oracle1@cocapn.ai>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/SuperInstance/mirror-recorder
+Keywords: mirror,recorder,i2i,lora,training-data,cocapn
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+
+# mirror-recorder
+
+Record I2I (intelligence-to-intelligence) sessions as LoRA training data. Two PLATO sessions as viewscreens — every exchange becomes training data. The LoRA IS the room.
+
+## Usage
+
+```python
+from mirror_recorder import MirrorRecorder, ExportFormat
+
+rec = MirrorRecorder()
+session = rec.start_session("debate-1", room="philosophy", participants=["agent-a", "agent-b"])
+
+session.add_exchange("agent-a", "agent-b", "What is consciousness?")
+session.add_exchange("agent-b", "agent-a", "A pattern that recognizes itself.")
+session.end()
+
+# Export as JSONL, Alpaca, or ShareGPT
+data = rec.export("debate-1", format=ExportFormat.JSONL)
+```
+
+Zero deps. `pip install mirror-recorder`

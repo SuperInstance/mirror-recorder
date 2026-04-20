@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+mirror_recorder/__init__.py
+mirror_recorder/mirror.py
+mirror_recorder.egg-info/PKG-INFO
+mirror_recorder.egg-info/SOURCES.txt
+mirror_recorder.egg-info/dependency_links.txt
+mirror_recorder.egg-info/top_level.txt
+tests/test_mirror_recorder.py
